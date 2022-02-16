@@ -27,51 +27,55 @@
                         <div class="mb-3">
                             <div class="d-flex align-items-center">
                             <p class=" me-2">Income: </p>
-                            <input type="text">
+                            <input id="total-income" type="text">
                             </div>
+                            <div id="income-error"></div>
                         </div>
                         <div class="mb-3">
                             <h3>Expenses</h3>
                         </div>
                         <div class="mb-3">
-                            <div class="d-flex align-items-center">
+                            <div id="food-erron" class="d-flex align-items-center">
                                 <p class=" me-4">Food: </p>
-                                <input type="text">
+                                <input id="food" type="text">
                             </div>
+                            <div id="food-error"></div>
                         </div>
                         <div class="mb-3">
-                            <div class="d-flex align-items-center">
+                            <div id="rent-erron" class="d-flex align-items-center">
                                 <p class=" me-4">Rent: </p>
-                                <input type="text">
+                                <input id="rent" type="text">
                             </div>
+                            <div id="rent-error"></div>
                         </div>
                         <div class="mb-3">
-                            <div class="d-flex align-items-center">
+                            <div id="clothes-erron" class="d-flex align-items-center">
                                 <p class=" me-2">Clothes: </p>
-                                <input type="text">
+                                <input id="clothes" type="text">
                             </div>
+                            <div id="clothes-error"></div>
                         </div>
                         
                         <div class="mb-3">
                             <div>
                                 <div class="d-flex justify-content-center mt-4 mb-2">
-                                    <button>Calculate</button>
+                                    <button id="calculate-button" class="rounded bg-info bg-gradient text-white">Calculate</button>
                                     </div>
-                                    <h3>Total Expenses: </h3>
-                                    <h3>Balance: </h3>
+                                    <h3>Total Expenses: <span id="total-expenses"></span> </h3>
+                                    <h3>Balance: <span id="balance"></span> </h3>
                             </div>
                         </div>
                         <div class="mb-3">
                             <div class="d-flex me-2 align-items-center">
                                 <p class=" me-2">Save: </p>
-                                <input class=" me-2" type="text">
+                                <input id="saving-parcent" class=" me-2" type="text">
                                 <p>%</p>
-                                <button class=" ms-2">Save</button>
+                                <button id="save-button" class=" ms-2 rounded bg-success bg-gradient text-white">Save</button>
                             </div>
                         </div>
                         <div>
-                            <h3>Saving Amount: </h3>
-                            <h3>Remaining Balance: </h3>
+                            <h3>Saving Amount: <span id="saving-amount"></span> </h3>
+                            <h3>Remaining Balance: <span id="remaining-balance"></span> </h3>
                         </div>
                     </div>
                 </div>
