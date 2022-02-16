@@ -34,13 +34,14 @@ function calculation(){
     const balance =  totalIncomeValue - totalExpenses; 
 
     const saving = document.getElementById('saving-parcent'); 
-    const savingPercent = parseInt(saving.value); 
+    const testSaving = saving.value; 
+    const savingPercent = parseInt(testSaving); 
     const saved = totalIncomeValue * (savingPercent/100); 
 
 
     const remainingBalance = balance - saved; 
 
-    return [totalExpenses, balance, totalIncomeValue, foodValue, rentValue, clothesValue, saved, remainingBalance]; 
+    return [totalExpenses, balance, totalIncomeValue, foodValue, rentValue, clothesValue, saved, remainingBalance, savingPercent, savingPercent]; 
 }
 
 
@@ -62,9 +63,14 @@ document.getElementById('calculate-button').addEventListener('click', function()
 document.getElementById('save-button').addEventListener('click', function(){
     const gettingSavedValue = calculation();
     console.log(gettingSavedValue[6], gettingSavedValue[1], gettingSavedValue[6], gettingSavedValue[7]); 
-    if(gettingSavedValue[6]<gettingSavedValue[1]){
-        document.getElementById('saving-amount').innerText = gettingSavedValue[6]; 
-        document.getElementById('remaining-balance').innerText = gettingSavedValue[7]; 
+    if(gettingSavedValue[6]<gettingSavedValue[1] || isNaN(gettingSavedValue[9]) == true){
+        if(gettingSavedValue[8]>0 && isNaN(gettingSavedValue[8]) == false){
+            document.getElementById('saving-amount').innerText = gettingSavedValue[6]; 
+            document.getElementById('remaining-balance').innerText = gettingSavedValue[7]; 
+        }
+        else{
+            errorChecking('error-saving'); 
+        }
     }
     else{
         document.getElementById('saving-amount').innerText = 'Insufficient Balance to save'; 
