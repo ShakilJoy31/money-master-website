@@ -16,14 +16,17 @@
         </div>
         <div class="d-flex justify-content-center">
             <div class="row gx-5 d-flex">
+                <!-- Setting Image -->
                 <div class="col-lg-7 col-sm-12">
                     <img width="100%" height="80%" src="images/giorgio-trovato-WyxqQpyFNk8-unsplash.jpg" alt="">
                 </div>
+                <!-- Main calculation -->
                 <div class="col-lg-5 col-12 d-flex justify-content-center">
-                    <div>
+                    <div class="bg-success bg-opacity-25 mb-4 ps-3 rounded">
                         <div class="mb-3">
                             <h3>Income</h3>
                         </div>
+                        <!-- Income site -->
                         <div class="mb-3">
                             <div class="d-flex align-items-center">
                             <p class=" me-2">Income: </p>
@@ -31,6 +34,7 @@
                             </div>
                             <div id="income-error"></div>
                         </div>
+                        <!-- Expenses site -->
                         <div class="mb-3">
                             <h3>Expenses</h3>
                         </div>
@@ -55,7 +59,7 @@
                             </div>
                             <div id="clothes-error"></div>
                         </div>
-                        
+                        <!-- Result of calculation -->
                         <div class="mb-3">
                             <div>
                                 <div class="d-flex justify-content-center mt-4 mb-2">
@@ -65,6 +69,7 @@
                                     <h3>Balance: <span id="balance"></span> </h3>
                             </div>
                         </div>
+                        <!-- Saving part -->
                         <div class="mb-3">
                             <div class="d-flex me-2 align-items-center">
                                 <p class=" me-2">Save: </p>
@@ -72,10 +77,12 @@
                                 <p>%</p>
                                 <button id="save-button" class=" ms-2 rounded bg-success bg-gradient text-white">Save</button>
                             </div>
+                            <div id="error-saving"></div>
                         </div>
+                        <!-- Saving part result -->
                         <div>
                             <h3>Saving Amount: <span id="saving-amount"></span> </h3>
-                            <div id="error-saving"></div>
+                            
                             <h3>Remaining Balance: <span id="remaining-balance"></span> </h3>
                         </div>
                     </div>
@@ -89,7 +96,7 @@
 
 
 
-
+    <!-- JavaScript file link -->
     <script src="calculation.js"></script>
 </body>
 </html>

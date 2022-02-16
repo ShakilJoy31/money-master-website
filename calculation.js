@@ -1,3 +1,4 @@
+// Comment for error input like negative and string
 function errorChecking(parentDiv){
         const parent = document.getElementById(parentDiv); 
         const createingParagrah = document.createElement('p'); 
@@ -5,9 +6,22 @@ function errorChecking(parentDiv){
         parent.appendChild(createingParagrah); 
     }
 
+// Main Calculation
 function calculation(){
+     // Calculation part
     const totalIncome = document.getElementById('total-income'); 
     const totalIncomeValue = parseInt(totalIncome.value);
+
+    const totalExpenses = foodValue + rentValue + clothesValue; 
+    const balance =  totalIncomeValue - totalExpenses; 
+
+    const saving = document.getElementById('saving-parcent'); 
+    const testSaving = saving.value; 
+    const savingPercent = parseInt(testSaving); 
+    const saved = totalIncomeValue * (savingPercent/100); 
+
+    const remainingBalance = balance - saved; 
+
     if(totalIncomeValue < 0 || isNaN(totalIncomeValue) == true){
         errorChecking('income-error'); 
     }
@@ -29,37 +43,33 @@ function calculation(){
         errorChecking('clothes-error'); 
     }
 
-
-    const totalExpenses = foodValue + rentValue + clothesValue; 
-    const balance =  totalIncomeValue - totalExpenses; 
-
-    const saving = document.getElementById('saving-parcent'); 
-    const testSaving = saving.value; 
-    const savingPercent = parseInt(testSaving); 
-    const saved = totalIncomeValue * (savingPercent/100); 
-
-
-    const remainingBalance = balance - saved; 
-
+    
+    // Return part
     return [totalExpenses, balance, totalIncomeValue, foodValue, rentValue, clothesValue, saved, remainingBalance, savingPercent, savingPercent]; 
 }
 
 
 
-
+// Event handling part
 document.getElementById('calculate-button').addEventListener('click', function(){
     const gettingValue = calculation();
     const cost = gettingValue[0];
     const balance = gettingValue[1];
 
-    console.log('button is clicked'); 
+    // Setting balance and expenses
     if(gettingValue[2] > 0 && isNaN(gettingValue[2]) == false && gettingValue[3] > 0 && isNaN(gettingValue[3]) == false && gettingValue[4] > 0 && isNaN(gettingValue[4]) == false && gettingValue[5] > 0 && isNaN(gettingValue[5]) == false){
         document.getElementById('total-expenses').innerText = cost; 
-        document.getElementById('balance').innerText = balance; 
-        console.log(gettingValue[0], gettingValue[1], gettingValue[2], gettingValue[3], gettingValue[4], gettingValue[5])
+        if(gettingValue[2] < gettingValue[0]){
+
+            document.getElementById('balance').innerText = 'Income is less than the cost. It is not acceptable'; 
+        }
+        else{
+            document.getElementById('balance').innerText = balance; 
+        }
     }
 }); 
 
+// Event handling part for save button
 document.getElementById('save-button').addEventListener('click', function(){
     const gettingSavedValue = calculation();
     console.log(gettingSavedValue[6], gettingSavedValue[1], gettingSavedValue[6], gettingSavedValue[7]); 
