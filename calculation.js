@@ -35,7 +35,7 @@ function calculation(){
 
     const saving = document.getElementById('saving-parcent'); 
     const savingPercent = parseInt(saving.value); 
-    const saved = balance * (savingPercent/100); 
+    const saved = totalIncomeValue * (savingPercent/100); 
 
 
     const remainingBalance = balance - saved; 
@@ -61,7 +61,14 @@ document.getElementById('calculate-button').addEventListener('click', function()
 
 document.getElementById('save-button').addEventListener('click', function(){
     const gettingSavedValue = calculation();
-    document.getElementById('saving-amount').innerText = gettingSavedValue[6]; 
-    document.getElementById('remaining-balance').innerText = gettingSavedValue[7]; 
-
+    console.log(gettingSavedValue[6], gettingSavedValue[1], gettingSavedValue[6], gettingSavedValue[7]); 
+    if(gettingSavedValue[6]<gettingSavedValue[1]){
+        document.getElementById('saving-amount').innerText = gettingSavedValue[6]; 
+        document.getElementById('remaining-balance').innerText = gettingSavedValue[7]; 
+    }
+    else{
+        document.getElementById('saving-amount').innerText = 'Insufficient Balance to save'; 
+        document.getElementById('remaining-balance').innerText = gettingSavedValue[1]; 
+    }
+    
 });
